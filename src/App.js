@@ -9,7 +9,6 @@ import products from "./products";
 
 function App() {
   const [picture1, set_picture] = React.useState({});
-  const [pic_re, set_pic_re] = React.useState("");
   const [produts_state, set_products_state] = React.useState(products);
   const [new_name, set_new_name] = React.useState("");
   const [new_gender, set_new_gender] = React.useState("");
@@ -42,16 +41,16 @@ function App() {
       <Router>
         <header className="bg-gray-300">
           <div className=" font-size-32 h-16 inline-flex w-full 	flex-row">
-            <Link className=" pb-4 ml-4  " to="/">
+            <Link className=" pb-4 ml-4  font-size-32" to="/">
               Shop
             </Link>
             <div className="h-8 w-px bg-gray-500 mt-4  mx-2"></div>
-            <Link className=" pb-4" to="/products">
+            <Link className=" pb-4 font-size-32" to="/products">
               Products
             </Link>
             <div className="h-8 w-px bg-gray-500 mt-4  mx-2"></div>
             <div className="h-8 w-px bg-gray-500 mt-4  ml-auto mr-2"></div>
-            <Link className=" pb-4 mr-4  	display:  " to="/contacts">
+            <Link className=" pb-4 mr-4  	font-size-32  " to="/contacts">
               Contacts
             </Link>
           </div>
