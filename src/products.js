@@ -12,8 +12,7 @@ export default [
   {
     name: "Happy Shibe",
     price: 3,
-    description:
-      "A very good girl. She will always support you and smile at you.",
+    description: "A very good girl. She will always support you with a smile.",
     gender: "Female",
     picture: pic2,
     key: 2,

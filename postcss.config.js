@@ -1,4 +1,14 @@
-const tailwindcss = require("tailwindcss");
+const purgecss = require("@fullhuman/postcss-purgecss")({
+  content: ["./src/**/*.tsx", "./src/**/*.js", "./src/**/*.jsx"],
+
+  // Include any special characters you're using in this regular expression
+  defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+});
+
 module.exports = {
-  plugins: [tailwindcss("./tailwind.js"), require("autoprefixer")],
+  plugins: [
+    require("tailwindcss"),
+    require("autoprefixer"),
+    process.env.NODE_ENV === "production" && purgecss,
+  ],
 };

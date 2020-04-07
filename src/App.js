@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "./logo.svg";
-import "./assets/index.css";
 import cls from "classnames";
 import { Link, BrowserRouter as Router, Switch } from "react-router-dom";
 import Route from "react-router-dom/Route";
@@ -21,20 +20,26 @@ function App() {
       price: new_price,
       description: new_description,
       gender: new_gender,
-      picture: picture1.imagepreview,
+      picture: picture1.file,
       key: produts_state.length,
     };
-
+    console.log(picture1);
     set_products_state([...produts_state, new_doge]);
   };
 
   const loadPicture = (element) => {
     let file = element.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () =>
-      set_picture({ file: file, imagepreview: reader.result });
-    reader.readAsDataURL(file);
+    set_picture({ file: URL.createObjectURL(file) });
   };
+
+  // ___Alternative way to for this function____
+  // const loadPicture = (element) => {
+  //   let file = element.target.files[0];
+  //   const reader = new FileReader();
+  //   reader.onloadend = () =>
+  //     set_picture({ file: file, imagepreview: reader.result });
+  //   reader.readAsDataURL(file);
+  // };
 
   return (
     <div>

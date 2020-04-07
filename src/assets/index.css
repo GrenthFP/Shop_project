@@ -52156,12 +52156,4 @@ code {
   .xl\:duration-1000 {
     transition-duration: 1000ms;
   }
-  .font-size-32{
-    font-size: 32px;
-  }
-  .minus-header{
-    height: calc(100vh - 4rem);
-  }
-  
 }
-
