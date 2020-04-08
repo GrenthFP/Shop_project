@@ -5,6 +5,7 @@ import { Link, BrowserRouter as Router, Switch } from "react-router-dom";
 import Route from "react-router-dom/Route";
 import pic from "./assets/placeholder.png";
 import products from "./products";
+import "./custom.css";
 
 function App() {
   const [picture1, set_picture] = React.useState({});
