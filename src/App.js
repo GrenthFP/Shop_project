@@ -1,11 +1,11 @@
 import React from "react";
-import logo from "./logo.svg";
 import cls from "classnames";
 import { Link, BrowserRouter as Router, Switch } from "react-router-dom";
 import Route from "react-router-dom/Route";
 import pic from "./assets/placeholder.png";
 import products from "./products";
 import "./custom.css";
+import logo from "./assets/logo.png";
 
 function App() {
   const [picture1, set_picture] = React.useState({});
@@ -45,23 +45,25 @@ function App() {
   return (
     <div>
       <Router>
-        <header className="bg-gray-300">
+        <header className="color mb-2">
           <div className=" font-size-32 h-16 inline-flex w-full 	flex-row">
-            <Link className=" pb-4 ml-4  font-size-32" to="/">
+            <img src={logo} className="h-16 ml-4 my-2"></img>
+            <div className="h-12 w-px bg-gray-500 mt-4 ml-auto mx-2"></div>
+            <Link className="  mt-2  font-size-32 " to="/">
               Shop
             </Link>
-            <div className="h-8 w-px bg-gray-500 mt-4  mx-2"></div>
-            <Link className=" pb-4 font-size-32" to="/products">
+            <div className="h-12 w-px bg-gray-500 mt-4  mx-2"></div>
+            <Link className=" mt-2 font-size-32 mr-2" to="/products">
               Products
             </Link>
-            <div className="h-8 w-px bg-gray-500 mt-4  mx-2"></div>
-            <div className="h-8 w-px bg-gray-500 mt-4  ml-auto mr-2"></div>
-            <Link className=" pb-4 mr-4  	font-size-32  " to="/contacts">
+
+            <div className="h-12 w-px bg-gray-500 mt-4  mr-2"></div>
+            <Link className=" mt-2 mr-4  	font-size-32  " to="/contacts">
               Contacts
             </Link>
           </div>
         </header>
-        <body className="inline-flex 	flex-row">
+        <body className="inline-flex 	flex-row back bg_image w-full">
           <Switch>
             <Route exact path="/">
               <div className="	w-1/2  minus-header ">
@@ -147,7 +149,7 @@ function App() {
               </div>
             </Route>
             <Route exact path="/contacts">
-              <div></div>
+              <div className="w-full h-screen"></div>
             </Route>
             <Route exact path="/products/add">
               <div className="flex flex-col m-4">
@@ -197,6 +199,110 @@ function App() {
             </Route>
           </Switch>
         </body>
+        <footer class="footer bg-white relative pt-1 border-b-2 border-blue-700 bg-gray-300">
+          <div class="container mx-auto px-6">
+            <div class="sm:flex sm:mt-8">
+              <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
+                <div class="flex flex-col">
+                  <span class="font-bold text-gray-700 uppercase mb-2">
+                    Footer header 1
+                  </span>
+                  <span class="my-2">
+                    <a
+                      href="#"
+                      class="text-blue-700  text-md hover:text-blue-500"
+                    >
+                      link 1
+                    </a>
+                  </span>
+                  <span class="my-2">
+                    <a
+                      href="#"
+                      class="text-blue-700  text-md hover:text-blue-500"
+                    >
+                      link 1
+                    </a>
+                  </span>
+                  <span class="my-2">
+                    <a
+                      href="#"
+                      class="text-blue-700  text-md hover:text-blue-500"
+                    >
+                      link 1
+                    </a>
+                  </span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
+                    Footer header 2
+                  </span>
+                  <span class="my-2">
+                    <a
+                      href="#"
+                      class="text-blue-700 text-md hover:text-blue-500"
+                    >
+                      link 1
+                    </a>
+                  </span>
+                  <span class="my-2">
+                    <a
+                      href="#"
+                      class="text-blue-700  text-md hover:text-blue-500"
+                    >
+                      link 1
+                    </a>
+                  </span>
+                  <span class="my-2">
+                    <a
+                      href="#"
+                      class="text-blue-700 text-md hover:text-blue-500"
+                    >
+                      link 1
+                    </a>
+                  </span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
+                    Footer header 3
+                  </span>
+                  <span class="my-2">
+                    <a
+                      href="#"
+                      class="text-blue-700  text-md hover:text-blue-500"
+                    >
+                      link 1
+                    </a>
+                  </span>
+                  <span class="my-2">
+                    <a
+                      href="#"
+                      class="text-blue-700  text-md hover:text-blue-500"
+                    >
+                      link 1
+                    </a>
+                  </span>
+                  <span class="my-2">
+                    <a
+                      href="#"
+                      class="text-blue-700  text-md hover:text-blue-500"
+                    >
+                      link 1
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto px-6">
+            <div class="mt-16 border-t-2 border-gray-300 flex flex-col items-center">
+              <div class="sm:w-2/3 text-center py-6">
+                <p class="text-sm text-blue-700 font-bold mb-2">
+                  © 2020 Shop Project
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
       </Router>
     </div>
   );

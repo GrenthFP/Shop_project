@@ -1,3 +1,9 @@
 .font-size-32 {
-  font-size: 32px;
+  font-size: 36px;
+}
+.bg_image {
+  background-image: url("./assets/bg.jpg");
+}
+.color {
+  background-image: url("./assets/bg1.png");
 }
