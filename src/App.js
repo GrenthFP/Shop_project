@@ -45,7 +45,7 @@ function App() {
   return (
     <div>
       <Router>
-        <header className="color mb-2">
+        <header className="color mb-2 ">
           <div className=" font-size-32 h-16 inline-flex w-full 	flex-row">
             <img src={logo} className="h-16 ml-4 my-2"></img>
             <div className="h-12 w-px bg-gray-500 mt-4 ml-auto mx-2"></div>
@@ -63,7 +63,7 @@ function App() {
             </Link>
           </div>
         </header>
-        <body className="inline-flex 	flex-row back bg_image w-full">
+        <body className="inline-flex 	flex-row back bg_image  w-full h-screen">
           <Switch>
             <Route exact path="/">
               <div className="	w-1/2  minus-header ">
@@ -122,10 +122,10 @@ function App() {
               </div>
             </Route>
             <Route exact path="/products">
-              <div className="flex flex-row ">
+              <div className="flex flex-row">
                 {produts_state.map((product) => (
                   <div
-                    className="border-gray-600 border-solid border-2 w-48 p-4 m-2"
+                    className="border-gray-600 border-solid border-2 w-48 p-4 m-2 height"
                     // style={{ height: "400px" }}
                   >
                     <img
@@ -149,7 +149,7 @@ function App() {
               </div>
             </Route>
             <Route exact path="/contacts">
-              <div className="w-full h-screen"></div>
+              <div></div>
             </Route>
             <Route exact path="/products/add">
               <div className="flex flex-col m-4">
