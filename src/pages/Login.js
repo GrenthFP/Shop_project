@@ -6,18 +6,24 @@ export default function Login() {
   const [password_state, set_password_state] = React.useState("");
 
   const Login_func = async () => {
-    let response = await axios.post("http://localhost:5000/Login_check", {
-      username: username_state,
-      password: password_state,
-    });
+    let response = await axios.post(
+      "https://fifa-bois-backend.herokuapp.com/Login_check",
+      {
+        username: username_state,
+        password: password_state,
+      }
+    );
     console.log(response.data.answer);
   };
 
   const Register_func = async () => {
-    let response = await axios.post("http://localhost:5000/register", {
-      username: username_state,
-      password: password_state,
-    });
+    let response = await axios.post(
+      "https://fifa-bois-backend.herokuapp.com/register",
+      {
+        username: username_state,
+        password: password_state,
+      }
+    );
 
     if (response.data.error) {
       console.log("fail");
