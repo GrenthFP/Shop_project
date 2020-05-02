@@ -11,6 +11,7 @@ import SibersPage from "./pages/ShibersPage";
 import Footer from "./assets/Footer";
 import text from "./assets/text";
 import Login from "./pages/Login";
+import Head from "./assets/head";
 
 function App() {
   const [picture1, set_picture] = React.useState({});
@@ -57,14 +58,14 @@ function App() {
     <div className="w-screen">
       <Router>
         <header className="color mb-2 w-full ">
-          <div className=" h-15 sm:h-1  inline-flex w-full 	flex-row">
-            <img src={logo} className="h-16 ml-4 my-2"></img>
+          {/* <div className=" h-15 sm:h-1  inline-flex w-full 	flex-row">
+            <img src={logo} className="h-16  ml-4 my-2"></img>
             <div className="h-12 w-px bg-gray-500 mt-4 ml-auto mx-2"></div>
             <Link className="  mt-2  text-4xl " to="/">
               Shop
             </Link>
             <div className="h-12 w-px bg-gray-500 mt-4  mx-2"></div>
-            <Link className=" mt-2 text-4xl mr-2" to="/products">
+            <Link className=" mt-2 text-4xl  mr-2" to="/products">
               Products
             </Link>
 
@@ -75,13 +76,14 @@ function App() {
             >
               Account
             </Link>
-          </div>
+          </div> */}
+          <Head />
         </header>
         <body className="inline-flex 	flex-row back bg_image  w-full h-screen">
           <Switch>
             <Route exact path="/">
-              <div className="	w-1/2  minus-header ">
-                <h1 className="p-4">{text.text1}</h1>
+              <div className="	w-1/2  minus-header block ">
+                <h1 className="p-4 block">{text.text1}</h1>
               </div>
               <div className=" border-solid	w-1/2  minus-header inline-block p-4">
                 <img src={pic}></img>
