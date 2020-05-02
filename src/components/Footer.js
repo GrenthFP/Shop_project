@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer class="footer bg-white relative pt-1 border-b-2 border-blue-700 bg-gray-300 block">
+    <footer class="footer bg-white relative pt-1 border-b-2 border-blue-700 bg-gray-300 block mt-auto">
       <div class="container mx-auto px-6">
         <div class="sm:flex sm:mt-8">
           <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">

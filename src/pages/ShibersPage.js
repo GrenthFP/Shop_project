@@ -6,14 +6,16 @@ export default function SibersPage() {
   const [Shuber, set_Shuber] = React.useState([]);
   useEffect(() => {
     const respose = async () => {
-      let all_shibers = await Axios.get("http://localhost:5000/getShibers");
+      let all_shibers = await Axios.get(
+        "https://fifa-bois-backend.herokuapp.com/getShibers"
+      );
       set_Shuber(all_shibers.data.shiber);
     };
     respose();
   }, [Shuber]);
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row min-h-full">
       {Shuber.map((product) => (
         <div
           className="border-gray-600 border-solid border-2 w-48 p-4 m-2 height"
