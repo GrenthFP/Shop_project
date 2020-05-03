@@ -4,6 +4,7 @@ import axios from "axios";
 export default function Login() {
   const [username_state, set_username_state] = React.useState("");
   const [password_state, set_password_state] = React.useState("");
+  const [answere, setAnswer] = React.useState("");
 
   const Login_func = async () => {
     let response = await axios.post(
@@ -14,6 +15,7 @@ export default function Login() {
       }
     );
     console.log(response.data.answer);
+    setAnswer(response.data.answer);
   };
 
   const Register_func = async () => {
@@ -27,8 +29,10 @@ export default function Login() {
 
     if (response.data.error) {
       console.log("fail");
+      setAnswer("Failed");
     } else {
       console.log("ok");
+      setAnswer("Registered");
     }
   };
 
@@ -47,6 +51,7 @@ export default function Login() {
         type="text"
         onChange={(element) => set_password_state(element.target.value)}
       />
+      <label>{answere}</label>
       <button
         onClick={Login_func}
         className="tracking-wider text-white bg-orange-500  text-sm rounded leading-loose mx-2 font-semibold m-2 p-1"
