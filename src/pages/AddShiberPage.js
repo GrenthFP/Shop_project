@@ -1,11 +1,10 @@
 import React from "react";
 import axios from "axios";
-import products from "../products";
 import { Link, BrowserRouter as Router, Switch } from "react-router-dom";
 
 export default function AddSibersPage() {
   const [picture1, set_picture] = React.useState({});
-  const [produts_state, set_products_state] = React.useState(products);
+  const [produts_state, set_products_state] = React.useState(0);
   const [new_name, set_new_name] = React.useState("");
   const [new_gender, set_new_gender] = React.useState("");
   const [new_price, set_new_price] = React.useState();
@@ -29,8 +28,7 @@ export default function AddSibersPage() {
     } else {
       console.log("ok");
     }
-    // console.log(picture1);
-    // set_products_state([...produts_state, new_doge]);
+    set_products_state(set_products_state + 1);
   };
 
   const loadPicture = (element) => {

@@ -15,16 +15,6 @@ export default function Footer() {
                   link 1
                 </a>
               </span>
-              <span class="my-2">
-                <a href="#" class="text-blue-700  text-md hover:text-blue-500">
-                  link 1
-                </a>
-              </span>
-              <span class="my-2">
-                <a href="#" class="text-blue-700  text-md hover:text-blue-500">
-                  link 1
-                </a>
-              </span>
             </div>
             <div class="flex flex-col">
               <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
@@ -35,30 +25,10 @@ export default function Footer() {
                   link 1
                 </a>
               </span>
-              <span class="my-2">
-                <a href="#" class="text-blue-700  text-md hover:text-blue-500">
-                  link 1
-                </a>
-              </span>
-              <span class="my-2">
-                <a href="#" class="text-blue-700 text-md hover:text-blue-500">
-                  link 1
-                </a>
-              </span>
             </div>
             <div class="flex flex-col">
               <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
                 Footer header 3
-              </span>
-              <span class="my-2">
-                <a href="#" class="text-blue-700  text-md hover:text-blue-500">
-                  link 1
-                </a>
-              </span>
-              <span class="my-2">
-                <a href="#" class="text-blue-700  text-md hover:text-blue-500">
-                  link 1
-                </a>
               </span>
               <span class="my-2">
                 <a href="#" class="text-blue-700  text-md hover:text-blue-500">

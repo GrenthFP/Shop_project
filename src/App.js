@@ -1,6 +1,5 @@
 import React from "react";
-import cls from "classnames";
-import { Link, BrowserRouter as Router, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Route from "react-router-dom/Route";
 import "./custom.css";
 import SibersPage from "./pages/ShibersPage";
@@ -21,7 +20,6 @@ function App() {
         }}
       >
         <Head />
-
         <Switch>
           <Route exact path="/">
             <MainPage />
@@ -36,7 +34,6 @@ function App() {
             <ShiberAddPage />
           </Route>
         </Switch>
-
         <Footer />
       </div>
     </Router>
