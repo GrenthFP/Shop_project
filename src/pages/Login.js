@@ -2,37 +2,41 @@ import React from "react";
 import axios from "axios";
 
 export default function Login() {
-  const [username_state, set_username_state] = React.useState("");
-  const [password_state, set_password_state] = React.useState("");
+  const [usernameState, setUsernameState] = React.useState("");
+  const [passwordState, setPasswordState] = React.useState("");
   const [answere, setAnswer] = React.useState("");
-
+  //function that sends the login attempt data to the backend and displays an answer
   const Login_func = async () => {
     let response = await axios.post(
       "https://fifa-bois-backend.herokuapp.com/Login_check",
       {
-        username: username_state,
-        password: password_state,
+        username: usernameState,
+        password: passwordState,
       }
     );
     console.log(response.data.answer);
     setAnswer(response.data.answer);
   };
-
+  //function that sends the registration attempt data to the backend and displays an answer
   const Register_func = async () => {
-    let response = await axios.post(
-      "https://fifa-bois-backend.herokuapp.com/register",
-      {
-        username: username_state,
-        password: password_state,
-      }
-    );
+    try {
+      let response = await axios.post(
+        "https://fifa-bois-backend.herokuapp.com/register",
+        {
+          username: usernameState,
+          password: passwordState,
+        }
+      );
 
-    if (response.data.error) {
-      console.log("fail");
-      setAnswer("Failed");
-    } else {
-      console.log("ok");
-      setAnswer("Registered");
+      if (response.data.error) {
+        console.log("fail");
+        setAnswer("Failed");
+      } else {
+        console.log("ok");
+        setAnswer("Registered");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -43,13 +47,13 @@ export default function Login() {
         className="border border-2 rounded-r px-4 py-2 w-full bg-gray-200 my-2 ml-2"
         placeholder="Write Username here..."
         type="text"
-        onChange={(element) => set_username_state(element.target.value)}
+        onChange={(element) => setUsernameState(element.target.value)}
       />
       <input
         className="border border-2 rounded-r px-4 py-2 w-full bg-gray-200 my-2 ml-2"
         placeholder="Write Password here..."
         type="text"
-        onChange={(element) => set_password_state(element.target.value)}
+        onChange={(element) => setPasswordState(element.target.value)}
       />
       <label>{answere}</label>
       <button

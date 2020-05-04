@@ -1,35 +1,34 @@
 import React, { useEffect } from "react";
-import Axios from "axios";
+import axios from "axios";
 import { Link, BrowserRouter as Router, Switch } from "react-router-dom";
+import { config } from "../utilities/ServerConstants";
 
 export default function SibersPage() {
-  const [Shuber, set_Shuber] = React.useState([]);
+  //automated function to get objects data fromt he backend
+  const [shuber, setshuber] = React.useState([]);
   useEffect(() => {
     const respose = async () => {
-      let all_shibers = await Axios.get(
-        "https://fifa-bois-backend.herokuapp.com/getShibers"
-      );
-      set_Shuber(all_shibers.data.shiber);
+      try {
+        let currentShiber = await axios.get(config.url.API_URL_getShibbers);
+        setshuber(currentShiber.data.shiber);
+      } catch (error) {
+        console.log(error);
+      }
     };
     respose();
-  }, [Shuber]);
+  }, []);
 
   return (
     <div className="flex flex-row min-h-full">
-      {Shuber.map((product) => (
+      {shuber.map((product) => (
         <div
           className="border-gray-600 border-solid border-2 w-48 p-4 m-2 height"
           style={{ height: "400px" }}
         >
-          {/* <img
-            className="w-40 h-40"
-            key={product.key}
-            src={product.picture}
-          ></img> */}
           <p className="h-10">Name: {product.name}</p>
           <p className="h-10">Gender: {product.gender}</p>
           <p className="h-10">Price: {product.price}$ </p>
-          <p className="h-32">Traits: {product.description} </p>
+          <p className="h-32">Description: {product.traits} </p>
         </div>
       ))}
       <div>

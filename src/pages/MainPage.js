@@ -1,7 +1,7 @@
 import React from "react";
-import text from "../components/Text";
-import pic from "../assets/placeholder.png";
-import back from "../assets/back.jpg";
+import text from "../utilities/Text";
+import pic from "../assets/images/placeholder.png";
+import back from "../assets/images/back.jpg";
 
 export default function MainPage() {
   return (
