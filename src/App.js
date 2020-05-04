@@ -20,18 +20,13 @@ function App() {
       >
         <Head />
         <Switch>
-          <Route exact path="/">
-            <MainPage />
-          </Route>
-          <Route exact path="/products">
-            <SibersPage />
-          </Route>
-          <Route exact path="/contacts">
-            <Login />
-          </Route>
-          <Route exact path="/products/add">
-            <ShiberAddPage />
-          </Route>
+          <Route exact path="/" component={MainPage} />
+
+          <Route exact path="/products" component={SibersPage} />
+
+          <Route exact path="/contacts" component={Login} />
+
+          <Route exact path="/products/add" component={ShiberAddPage} />
         </Switch>
         <Footer />
       </div>
