@@ -42,7 +42,7 @@ export default function Login() {
 
   return (
     <div>
-      <h2>Log in:</h2>
+      <span>Log in:</span>
       <input
         className="border border-2 rounded-r px-4 py-2 w-full bg-gray-200 my-2 ml-2"
         placeholder="Write Username here..."

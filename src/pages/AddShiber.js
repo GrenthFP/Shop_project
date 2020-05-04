@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 
 export default function AddSibersPage() {
   let history = useHistory();
+
   //object to be sent to the backend
   const [requestObject, setRequestObject] = useState({
     name: "",
@@ -13,7 +14,8 @@ export default function AddSibersPage() {
     description: "",
   });
   //function for submitting the object
-  const submit = async () => {
+  const submit = async (e) => {
+    e.preventDefault();
     try {
       let response = await axios.post(config.url.API_URL_addShibe, {
         name: requestObject.name,
@@ -31,8 +33,7 @@ export default function AddSibersPage() {
     } catch (errorReqest) {
       console.log(errorReqest);
     }
-    console.log(requestObject);
-    history.push("/");
+    history.push("/products");
   };
   return (
     <div className="flex flex-col m-4">
